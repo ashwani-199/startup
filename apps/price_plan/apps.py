@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class PricePlanConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'price_plan'
+    name = 'apps.price_plan'

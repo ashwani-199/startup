@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'apps.blog',
     'active_link',
     'apps.contact',
+    'apps.features',
+    'apps.price_plan',
+    'apps.free_quote',
+    'apps.team_members',
+    'apps.testimonial',
 ]
 
 MIDDLEWARE = [

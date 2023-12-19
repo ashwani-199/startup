@@ -9,7 +9,7 @@
     <meta content="Software solution" name="description" />
 
     <!-- Favicon -->
-    <link href="{% static 'img/favicon.ico' %}" rel="icon" />
+    <link href="{% static 'img/fevicon.ico' %}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -156,11 +156,21 @@
                 >Pages</a
               >
               <div class="dropdown-menu m-0">
-                <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                <a href="feature.html" class="dropdown-item">Our features</a>
-                <a href="team.html" class="dropdown-item">Team Members</a>
-                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                <a href="quote.html" class="dropdown-item">Free Quote</a>
+                <a href="{% url  'price' %}" class="dropdown-item"
+                  >Pricing Plan</a
+                >
+                <a href="{% url  'features' %}" class="dropdown-item"
+                  >Our features</a
+                >
+                <a href="{% url 'team' %}" class="dropdown-item"
+                  >Team Members</a
+                >
+                <a href="{% url 'testimonial' %}" class="dropdown-item"
+                  >Testimonial</a
+                >
+                <a href="{% url 'quotes' %}" class="dropdown-item"
+                  >Free Quote</a
+                >
               </div>
             </div>
             <a
@@ -205,7 +215,7 @@
                   Creative & Innovative Digital Solution
                 </h1>
                 <a
-                  href="#"
+                  href="{% url 'quotes' %}"
                   class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                   >Free Quote</a
                 >
@@ -413,26 +423,26 @@
                 <div
                   class="link-animated d-flex flex-column justify-content-start"
                 >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="{% url 'index' %}"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="{% url 'about' %}"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>About
                     Us</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="{% url 'services' %}"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Our
                     Services</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="{% url 'team' %}"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Meet The
                     Team</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="{% url 'blog' %}"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Latest
                     Blog</a
                   >
-                  <a class="text-light" href="#"
+                  <a class="text-light" href="{% url 'contact' %}"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
                     Us</a
                   >

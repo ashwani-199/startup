@@ -29,6 +29,11 @@ urlpatterns = [
     path('services/', include('apps.services.urls')),
     path('blog/', include('apps.blog.urls')),
     path('contact/', include('apps.contact.urls')),
+    path('features/', include('apps.features.urls')),
+    path('price-plan/', include('apps.price_plan.urls')),
+    path('quote/', include('apps.free_quote.urls')),
+    path('team/', include('apps.team_members.urls')),
+    path('testimonial/', include('apps.testimonial.urls')),
 
 ] 
 urlpatterns += staticfiles_urlpatterns()
