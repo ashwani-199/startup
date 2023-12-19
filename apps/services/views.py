@@ -2,4 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def services(request):
-    return render(request, 'services/service.html')
+    context = {"services_page": "active"}
+    return render(request, 'services/service.html', context)
