@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Business_2023</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Django Projects Python" name="keywords" />
+    <meta content="Freelancer India Python" name="keywords" />
     <meta content="Software solution" name="description" />
 
     <!-- Favicon -->
@@ -52,7 +52,11 @@
       <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
-
+    {% if messages %} {% for message in messages %} {% if message.tags %}
+    <script>
+      alert("{{ message }}");
+    </script>
+    {% endif %} {% endfor %} {% endif %}
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
       <div class="row gx-0">

@@ -20,8 +20,13 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+
+admin.site.site_title = "StartUp site admin"
+admin.site.site_header = "StartUp Administration"
+admin.site.index_title = "Site administration"
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('dashboard/', admin.site.urls),
 
     #apps include 
     path('', include('apps.home.urls')),
