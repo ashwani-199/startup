@@ -52,12 +52,19 @@
           class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
           data-wow-delay="0.9s"
         >
-          <form>
+          <form
+            name="myForm"
+            action="{% url 'add_quote' %}"
+            onsubmit="return validateForm()"
+            method="post"
+          >
+            {% csrf_token %}
             <div class="row g-3">
               <div class="col-xl-12">
                 <input
                   type="text"
                   class="form-control bg-light border-0"
+                  name="name"
                   placeholder="Your Name"
                   style="height: 55px"
                 />
@@ -66,6 +73,7 @@
                 <input
                   type="email"
                   class="form-control bg-light border-0"
+                  name="email"
                   placeholder="Your Email"
                   style="height: 55px"
                 />
@@ -73,17 +81,19 @@
               <div class="col-12">
                 <select
                   class="form-select bg-light border-0"
+                  name="services"
                   style="height: 55px"
                 >
                   <option selected>Select A Service</option>
-                  <option value="1">Service 1</option>
-                  <option value="2">Service 2</option>
-                  <option value="3">Service 3</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Django">Django</option>
+                  <option value="Flask">Flask</option>
                 </select>
               </div>
               <div class="col-12">
                 <textarea
                   class="form-control bg-light border-0"
+                  name="message"
                   rows="3"
                   placeholder="Message"
                 ></textarea>
@@ -121,5 +131,27 @@
   </div>
 </div>
 <!-- Vendor End -->
+
+<script>
+  function validateForm() {
+    let name = document.forms["myForm"]["name"].value;
+    let email = document.forms["myForm"]["email"].value;
+    let services = document.forms["myForm"]["services"].value;
+    let message = document.forms["myForm"]["message"].value;
+    if (name == "") {
+      alert("Name must be filled out");
+      return false;
+    } else if (email == "") {
+      alert("Email must be filled out");
+      return false;
+    } else if (services == "") {
+      alert("Services must be filled out");
+      return false;
+    } else if (message == "") {
+      alert("Message must be filled out");
+      return false;
+    }
+  }
+</script>
 
 {% endblock %}

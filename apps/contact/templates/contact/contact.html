@@ -58,7 +58,12 @@
     </div>
     <div class="row g-5">
       <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-        <form action="{% url 'contact' %}" method="post">
+        <form
+          name="myForm"
+          action="{% url 'contact' %}"
+          onsubmit="return validateForm()"
+          method="post"
+        >
           {% csrf_token %}
           <div class="row g-3">
             <div class="col-md-6">
@@ -139,4 +144,26 @@
   </div>
 </div>
 <!-- Vendor End -->
+
+<script>
+  function validateForm() {
+    let name = document.forms["myForm"]["name"].value;
+    let email = document.forms["myForm"]["email"].value;
+    let subject = document.forms["myForm"]["subject"].value;
+    let message = document.forms["myForm"]["message"].value;
+    if (name == "") {
+      alert("Name must be filled out");
+      return false;
+    } else if (email == "") {
+      alert("Email must be filled out");
+      return false;
+    } else if (subject == "") {
+      alert("Subject must be filled out");
+      return false;
+    } else if (message == "") {
+      alert("Message must be filled out");
+      return false;
+    }
+  }
+</script>
 {% endblock %}
