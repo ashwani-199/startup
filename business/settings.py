@@ -43,13 +43,13 @@ INSTALLED_APPS = [
     'apps.about',
     'apps.services',
     'apps.blog',
-    # 'active_link',
     'apps.contact',
     'apps.features',
     'apps.price_plan',
     'apps.free_quote',
     'apps.team_members',
     'apps.testimonial',
+    'mptt',
 ]
 
 MIDDLEWARE = [
@@ -133,14 +133,14 @@ USE_TZ = True
 
 # STATIC_URL = 'static/'
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static'
-# ]
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'media'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
-STATICFILES_DIRS = [BASE_DIR / "static"] #new 
-STATIC_ROOT = BASE_DIR / "staticfiles"  #new
+# STATICFILES_DIRS = [BASE_DIR / "static"] #new 
+# STATIC_ROOT = BASE_DIR / "staticfiles"  #new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
