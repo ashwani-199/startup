@@ -25,20 +25,22 @@ admin.site.site_title = "StartUp site admin"
 admin.site.site_header = "StartUp Administration"
 admin.site.index_title = "Site administration"
 
-urlpatterns = [
-    path('dashboard/', admin.site.urls),
-
-    #apps include 
-    path('', include('apps.home.urls')),
-    path('about/', include('apps.about.urls')),
-    path('services/', include('apps.services.urls')),
-    path('blog/', include('apps.blog.urls')),
-    path('contact/', include('apps.contact.urls')),
-    path('features/', include('apps.features.urls')),
-    path('price-plan/', include('apps.price_plan.urls')),
-    path('quote/', include('apps.free_quote.urls')),
-    path('team/', include('apps.team_members.urls')),
-    path('testimonial/', include('apps.testimonial.urls')),
-# ]
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += staticfiles_urlpatterns()
+if settings.DEBUG:
+    urlpatterns = [
+        path('dashboard/', admin.site.urls),
+    
+        #apps include 
+        path('', include('apps.home.urls')),
+        path('about/', include('apps.about.urls')),
+        path('services/', include('apps.services.urls')),
+        path('blog/', include('apps.blog.urls')),
+        path('contact/', include('apps.contact.urls')),
+        path('features/', include('apps.features.urls')),
+        path('price-plan/', include('apps.price_plan.urls')),
+        path('quote/', include('apps.free_quote.urls')),
+        path('team/', include('apps.team_members.urls')),
+        path('testimonial/', include('apps.testimonial.urls')),
+    # ]
+    
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += staticfiles_urlpatterns()
