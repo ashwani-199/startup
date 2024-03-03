@@ -13,3 +13,4 @@ typing_extensions==4.6.2
 tzdata==2023.3
 django-mptt
 Pillow
+whitenoise[brotli]
