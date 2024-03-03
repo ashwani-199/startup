@@ -40,6 +40,12 @@ urlpatterns = [
     path('team/', include('apps.team_members.urls')),
     path('testimonial/', include('apps.testimonial.urls')),
 
+<<<<<<< HEAD
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+=======
+# ] 
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+>>>>>>> 19ca7076555c917f9539e546e2d23054af35b28e
 urlpatterns += staticfiles_urlpatterns()
