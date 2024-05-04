@@ -14,7 +14,7 @@
                 <img class="img-fluid" src="{{results.image.url}}" alt="" />
                 <a
                   class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                  href=""
+                  href="{% url 'blogDetail' results.id %}"
                   >{{results.title}}</a
                 >
               </div>
@@ -30,7 +30,7 @@
                   >
                 </div>
                 <h4 class="mb-3">{{results.heading}}</h4>
-                <p>{{results.paragraph|truncatechars:100 |striptags}}</p>
+                <p>{{results.content | safe}}</p>
                 <a
                   class="text-uppercase"
                   href="{% url 'blogDetail' results.id %}"

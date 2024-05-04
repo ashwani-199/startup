@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from . models import BlogPost, Category, Comment, Like
 from mptt.admin import MPTTModelAdmin
 
@@ -13,8 +14,9 @@ class LikeAdmin(admin.ModelAdmin):
     list_display = ['id', 'user_id', 'post_id', 'created_at', 'updated_at']
 admin.site.register(Like, LikeAdmin)
 
-class BlogAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'user', 'heading', 'image', 'paragraph', 'created_at', 'updated_at']
+class BlogAdmin(SummernoteModelAdmin):
+    list_display = ['id', 'title', 'user', 'heading', 'image', 'content', 'created_at', 'updated_at']
+    summernote_fields = ('content',)
 
 admin.site.register(BlogPost, BlogAdmin)
 

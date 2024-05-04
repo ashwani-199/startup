@@ -17,7 +17,7 @@ class BlogPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     heading = models.CharField(max_length=100, null=True, blank=True)
     image = models.ImageField(upload_to='blog_post')
-    paragraph = models.TextField()
+    content = models.TextField()
     like = models.ManyToManyField(User, verbose_name='Post Likes', related_name='Likes')
     comment = models.ManyToManyField(User, verbose_name='Post Comments', related_name='Comments')
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)

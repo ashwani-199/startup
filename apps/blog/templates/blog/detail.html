@@ -13,7 +13,7 @@
             alt=""
           />
           <h1 class="mb-4">{{blog_post.heading}}</h1>
-          <p>{{blog_post.paragraph|linebreaks}}</p>
+          <p>{{blog_post.content| safe}}</p>
         </div>
         <!-- Blog Detail End -->
 
