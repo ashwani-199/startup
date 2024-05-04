@@ -14,3 +14,4 @@ tzdata==2023.3
 django-mptt
 Pillow
 whitenoise[brotli]
+django_summernote
