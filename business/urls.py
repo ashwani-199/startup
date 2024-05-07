@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from business.common_modules.mainServices import MainService
 
 admin.site.site_title = "StartUp site admin"
@@ -26,11 +26,17 @@ urlpatterns = [
 
     path('summernote/', include('django_summernote.urls')),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# ]
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 # urlpatterns += staticfiles_urlpatterns()
 
 handler404 = MainService.error_404
 handler500 = MainService.error_500
 handler403 = MainService.error_403
 handler400 = MainService.error_400
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += staticfiles_urlpatterns()
+else:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

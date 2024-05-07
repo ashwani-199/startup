@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qa*5$6=yu!omi4^g+z5&1mnz7uhm+-e=va-dk4*s^-otgvk9pm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -134,10 +134,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # STATIC_URL = 'static/'
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT =  BASE_DIR / "media"
+# MEDIA_URL = 'media/'
+# MEDIA_ROOT =  BASE_DIR / "media"
 
 # STATIC_ROOT = BASE_DIR / "static"
 
@@ -148,8 +148,20 @@ MEDIA_ROOT =  BASE_DIR / "media"
 #     # and renames the files with unique names for each version to support long-term caching
 #     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_DIRS = [BASE_DIR / "static"] #new 
-STATIC_ROOT = BASE_DIR / "staticfiles"  #new
+# STATICFILES_DIRS = [BASE_DIR / "static"] #new 
+# STATIC_ROOT = BASE_DIR / "staticfiles"  #new
+
+
+# New Staticfiles
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
