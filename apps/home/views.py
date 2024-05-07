@@ -8,3 +8,10 @@ def index(request):
                "recent_blog": recent_blog
     }
     return render(request, 'home/index.html', context)
+
+
+def privacy(request):
+    return render(request, 'home/privacy.html')
+
+def terms(request):
+    return render(request, 'home/terms.html')
