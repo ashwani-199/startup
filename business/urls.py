@@ -29,6 +29,9 @@ urlpatterns = [
 # ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ]
 # urlpatterns += staticfiles_urlpatterns()
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# ]
+# urlpatterns += staticfiles_urlpatterns()
 
 handler404 = MainService.error_404
 handler500 = MainService.error_500
