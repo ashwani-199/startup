@@ -1,6 +1,4 @@
 asgiref==3.8.1
-backports.zoneinfo==0.2.1
-bleach==6.1.0
 Django==4.2.12
 django-js-asset==2.2.0
 django-mptt==0.14.0
