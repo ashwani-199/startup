@@ -34,7 +34,7 @@ handler500 = MainService.error_500
 handler403 = MainService.error_403
 handler400 = MainService.error_400
 
-if settings.DEBUG == True:
+if settings.DEBUG == False:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
 
